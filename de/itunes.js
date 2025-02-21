@@ -22,7 +22,7 @@ function transformToAssocArray( prmstr ) {
 function performSearch() {
     $('#appletvprompt').css('display', 'none');
     $('#results').html('');
-    $('#results').append('<h3>Searching...</h3>');
+    $('#results').append('<h3>Suchen...</h3>');
 
     var query = $('#query').val();
     if (!query.length) {
@@ -72,7 +72,7 @@ function performSearch() {
                         $('#results').append('<h3>'+data.error+'</h3>');
                 } else {
                     if (!data.length) {
-                        $('#results').append('<h3>No results found.</h3>');
+                        $('#results').append('<h3>Keine Ergebnisse gefunden.</h3>');
                     } else {
                         for (var i = 0; i < data.length; i++) {
                             var result = data[i];
@@ -80,10 +80,10 @@ function performSearch() {
 
                             var html = '<div><h3>'+result.title+'</h3>';
                             if (entity != 'software' && entity != 'iPadSoftware' && entity != 'macSoftware') {
-                                var uncompressed = result.uncompressed ? '<a href="' + result.uncompressed + '" target="_blank">High Resolution</a>' : '<a href="'+result.hires+'" target="_blank">High Resolution</a>';
-                                html += '<p><a href="'+result.url+'" target="_blank">Standard Resolution</a> | ' + uncompressed + '</p>';
+                                var uncompressed = result.uncompressed ? '<a href="' + result.uncompressed + '" target="_blank">Hohe Auflösung</a>' : '<a href="'+result.hires+'" target="_blank">Hohe Auflösung</a>';
+                                html += '<p><a href="'+result.url+'" target="_blank">Standardauflösung</a> | ' + uncompressed + '</p>';
                             } else if (entity == 'software' || entity == 'iPadSoftware') {
-                                html += '<p><a href="./app/?url='+encodeURIComponent(result.appstore)+'&country='+country+'" target="_blank">Screenshots / Videos</a></p>';
+                                html += '<p><a href="./app/?url='+encodeURIComponent(result.appstore)+'&country='+country+'" target="_blank">Bildschirmfotos / Videos</a></p>';
                             }
                             html += '<a href="'+result.url+'" target="_blank" title="iTunes Artwork for \''+result.title+'\'" download="'+result.title+'"><img src="'+result.url+'" alt="iTunes Artwork for \''+result.title+'\'" width="'+result.width+'" height="'+result.height+'"></a>';
                             html += '</div>';
@@ -92,7 +92,7 @@ function performSearch() {
                         };
                     }            
                 }
-                $('#results').append('<p>If the item you are searching for is not available on iTunes, this tool will not find it.</p>');
+                $('#results').append('<p>Wenn das Cover nicht in iTunes verfügbar ist, wird es von diesem Tool nicht gefunden.</p>');
 
             });
         });
