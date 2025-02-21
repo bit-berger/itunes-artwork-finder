@@ -1,41 +1,27 @@
 iTunes Artwork Finder
 =====================
 
-This is the JavaScript and PHP code that powers the iTunes Artwork Finder available at [https://bendodson.com/projects/itunes-artwork-finder/](https://bendodson.com/projects/itunes-artwork-finder/)
+A fork of the iTunes Artwork Finder
 
-To use on your own site, simply upload both the JavaScript and PHP files and then initialise the script with something like:
 
-	<div>
-		<form action="" method="get" accept-charset="utf-8" id="iTunesSearch">
-			<select name="entity" id="entity">
-				<option value="tvSeason">TV Show</option>
-				<option value="movie">Movie</option>
-				<option value="ebook">iBook</option>
-				<option value="album">Album</option>
-				<option value="software">App (iPhone or Universal)</option>
-				<option value="iPadSoftware">App (iPad)</option>
-				<option value="macSoftware">App (macOS)</option>
-				<option value="audiobook">Audiobook</option>
-				<option value="podcast">Podcast</option>
-				<option value="musicVideo">Music Video (may not work)</option>
-				<option value="id">Apple ID (Movie)</option>
-				<option value="idAlbum">Apple ID (Album)</option>
-				<option value="shortFilm">Short Film</option>
-			</select>
-			<input type="text" class="text" name="query" id="query" />
-			<select name="country" id="country">
-				<option value='us'>United States of America</option>
-				<option value='gb'>United Kingdom</option>
-			</select>
-			<input type="submit" class="submit" value="Get the artwork" />
-		</form>
-	</div>
+## About
+iTunes Artwork Finder is a tool to get Album Artworks from iTunes
 
-	<div id="results">
+## Changes to the original project
+- Ready for use: Just upload the files and a jQuery version to an webserver
+- No CDN providers:
+- 
+- A german UI: There is also a german version available
 
-	</div>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="itunes.js"></script>
-
-You will need to amend the first line within `itunes.js` so that the `pathToAPI` variable points to the absolute URL of the `api.php` file running on a PHP server.
+## How to run this on an linux server (for beginners :) )
+1. Install a webserver and php
+```
+sudo apt install apache2 php -y
+```
+2. Create a directory
+3. Get the jQuery version 3.7.1
+```
+wget https://code.jquery.com/jquery-3.7.1.min.js
+```
+4. Get the files of this project
+5. Point your web browser to the index file of the directory
